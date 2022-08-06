@@ -9,7 +9,8 @@
     "react": "^16.12.0",
     "react-apollo": "^3.1.3",
     "react-dom": "^16.12.0",
-    "react-intl": "^3.12.0"
+    "react-intl": "^3.12.0",
+    "axios": "^0.27.2"
   },
   "devDependencies": {
     "@apollo/react-testing": "^3.1.3",
@@ -19,7 +20,10 @@
     "@vtex/test-tools": "^3.3.2",
     "@vtex/tsconfig": "^0.4.4",
     "apollo-cache-inmemory": "^1.6.5",
+    "controll.product-suggestion-block": "https://douglas2--controll.myvtex.com/_v/private/typings/linked/v1/controll.product-suggestion-block@0.0.2+build1659817655/public/@types/controll.product-suggestion-block",
     "graphql": "^14.6.0",
-    "typescript": "^3.9.6"
+    "typescript": "3.9.7",
+    "vtex.product-context": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.product-context@0.10.0/public/@types/vtex.product-context",
+    "vtex.render-runtime": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.132.4/public/@types/vtex.render-runtime"
   }
 }
