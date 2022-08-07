@@ -10,6 +10,8 @@ import { mapSKUItemsToCartItems, sortItemsByLists } from '../utils'
 import ProductSummaryWithChange from './ProductSummaryWithChange'
 import TotalSuggestion from './TotalSuggestion'
 
+import IconEqual from '../icons/IconEqual'
+
 const { ProductGroupProvider, useProductGroup } = ProductGroupContext
 
 interface Props {
@@ -21,7 +23,8 @@ const CSS_HANDLES = [
   'buyTogetherContainer',
   'buyTogetherContent',
   'buyTogetherSuggestion',
-  'totalValue',
+  'buyTogetherIconPlus',
+  'buyTogetherIconEqual'
 ]
 
 const notNull = (item: CartItem | null): item is CartItem => item !== null
@@ -94,7 +97,7 @@ function BuyTogetherCustom({
             const { products, current } = suggestedList
             return (
               <Fragment key={`${products[current]?.productId}-${index}`}>
-                <div className="self-center ma2">
+                <div className={`self-center ma2 ${handles.buyTogetherIconPlus}`}>
                   <IconPlusLines size={20} />
                 </div>
                 <ProductSummaryWithChange
@@ -107,6 +110,9 @@ function BuyTogetherCustom({
               </Fragment>
             )
           })}
+        </div>
+        <div className={`self-center ma5 mv5 ${handles.buyTogetherIconEqual}`}>
+          <IconEqual />
         </div>
         <TotalSuggestion cartItems={cartItems} BuyButton={BuyButton} />
       </div >

@@ -1,7 +1,7 @@
 {
   "vendor": "controll",
   "name": "product-suggestion-block",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "title": "Sugestão de Produtos",
   "description": "Sugestão de Produtos",
   "defaultLocale": "pt-BR",

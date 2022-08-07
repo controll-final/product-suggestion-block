@@ -1,5 +1,4 @@
-import React, { Fragment, useMemo } from 'react'
-import IconEqual from '../icons/IconEqual'
+import React, { useMemo } from 'react'
 
 import { FormattedCurrency } from 'vtex.format-currency'
 import { useCssHandles } from 'vtex.css-handles'
@@ -10,8 +9,9 @@ interface Props {
 }
 
 const CSS_HANDLES = [
-  'valueTitle',
-  'totalValue',
+  'totalSuggestionContainer',
+  'totalSuggestionTitle',
+  'totalSuggestionValue',
 ]
 
 export default function TotalSuggestion({
@@ -29,19 +29,14 @@ export default function TotalSuggestion({
   }, [cartItems])
 
   return (
-    <Fragment>
-      <div className="self-center ma5 mv5">
-        <IconEqual />
+    <div className={`w-100 mh2 mh6-l w-20-l self-center mv4 ${handles.totalSuggestionContainer}`}>
+      <div className={`mv5 ${handles.totalSuggestionTitle}`}>
+        {`Compre os ${totalProducts} produtos por`}
       </div>
-      <div className="w-100 mh2 mh6-l w-20-l self-center mv4">
-        <div className={`mv5 ${handles.valueTitle}`}>
-          {`Compre os ${totalProducts} produtos por`}
-        </div>
-        <div className={`mv5 ${handles.totalValue}`}>
-          <FormattedCurrency value={totalPrice} />
-        </div>
-        <BuyButton skuItems={cartItems} />
+      <div className={`mv5 ${handles.totalSuggestionValue}`}>
+        <FormattedCurrency value={totalPrice} />
       </div>
-    </Fragment>
+      <BuyButton skuItems={cartItems} />
+    </div>
   )
 }
